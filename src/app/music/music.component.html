@@ -1,0 +1,70 @@
+<div class="card mb-3">
+  <img class="card-img-top" src="assets/img/music.jpg" alt="Card image cap" />
+  <div class="card-body">
+    <h5 class="card-title text-center">Musikwünsche</h5>
+    <p class="card-text text-center">
+      Hier kannst du im vorab oder noch am Abend der Hochzeit Musikwünsche
+      äußern.
+    </p>
+    <p class="card-text text-center">
+      <small class="text-muted">Last updated 3 mins ago</small>
+    </p>
+  </div>
+</div>
+
+<div class="card text-center">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Wünschen</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Ansehen</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Löschen</a>
+      </li>
+    </ul>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Einen Song wünschen</h5>
+    <p class="card-text">Keine Garantie für Aufnahme in die Playlist :)</p>
+    <form [formGroup]="musicForm" (submit)="makeWish($event)">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Titel</label>
+        <input
+          type="text"
+          class="form-control"
+          id="song"
+          aria-describedby="musicHelp"
+          placeholder="Gebe hier den gewünschten Titel an"
+          required
+          formControlName="title"
+        />
+      </div>
+      <div class="form-group mt-3">
+        <label for="exampleInputEmail1">Interpret</label>
+        <input
+          type="text"
+          class="form-control"
+          id="interpret"
+          aria-describedby="interpretHelp"
+          placeholder="Gebe hier den gewünschten Interpreten an"
+          required
+          formControlName="interpret"
+        />
+      </div>
+      <div class="form-group mt-3">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="container custom-container">
+  <hr />
+
+  <!-- Filtern nach eigenen wünschen sortieren. Suchen nach einem bestimmten autor. Bild einfügen-->
+
+  <app-music-wish-list [musicWishes]="musicWishes"></app-music-wish-list>
+</div>

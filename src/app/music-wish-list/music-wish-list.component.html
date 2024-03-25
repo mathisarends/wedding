@@ -1,0 +1,15 @@
+<div class="mt-3">
+  <h3>Wunschliste</h3>
+
+  <!-- <app-pagination [pages]="['Alle', 'Eigene']"></app-pagination> -->
+
+  @if (musicWishes.length > 0) {
+  <ul class="list-group">
+    <div *ngFor="let wish of musicWishes">
+      <li class="list-group-item">{{ wish.title }} von {{ wish.interpret }}</li>
+    </div>
+  </ul>
+  } @else {
+  <app-no-wish />
+  }
+</div>
