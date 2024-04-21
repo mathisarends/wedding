@@ -1,0 +1,6 @@
+@media (max-width: 768px) {
+  /* Passt das Layout für Bildschirme kleiner als 768px an */
+  .d-grid {
+    grid-template-columns: 1fr !important; /* Eine Spalte für mobile Ansicht */
+  }
+}
